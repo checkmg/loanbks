@@ -47,8 +47,11 @@ public class LoanFacility extends Bank implements Comparable<LoanFacility>{
 		this.covenant = covenant;
 	}
 	public int compareTo(LoanFacility o) {
-		// TODO Auto-generated method stub
-		return (int) (this.getfInterest()*1000 - o.getfInterest()*1000);
+		int result = (int) (this.getfInterest()*1000 - o.getfInterest()*1000);
+		if(result == 0) {
+			result = (int) (o.balance - this.balance);
+		}
+		return result;
 	}
 
 	public boolean addFundedLoan(Loan loan) {

@@ -43,12 +43,12 @@ public class LoanFundingApp {
 	
 	public static void publishResults(Map<Integer, LoanFacility> results) throws IOException {
 		StringWriter writer = new StringWriter();
-		CSVWriter csvWriter = new CSVWriter(new FileWriter("yeilds.csv"), ',', '\'');
+		CSVWriter csvWriter = new CSVWriter(new FileWriter("yeilds.csv"), ',');
 		csvWriter.writeAll(yeildsStringArray(results));
 		csvWriter.close();		
 		
 		StringWriter writer1 = new StringWriter();
-		CSVWriter csvWriter1 = new CSVWriter(new FileWriter("assignments.csv"), ',', '\'');
+		CSVWriter csvWriter1 = new CSVWriter(new FileWriter("assignments.csv"), ',');
 		csvWriter1.writeAll(assignmentStringArray(results));
 		csvWriter1.close();		
 		
